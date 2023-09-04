@@ -3,6 +3,9 @@
 <html lang="fr">
     @include('components.dashboard.head')
   <body>
+    @php
+        use Carbon\Carbon;
+    @endphp
 
     <div id="page-container" class="sidebar-dark enable-page-overlay side-scroll page-header-fixed main-content-narrow">
 

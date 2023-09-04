@@ -3,7 +3,7 @@
     <div class="content-header border-bottom">
       <!-- User Avatar -->
       <a class="img-link me-1" href="javascript:void(0)">
-        <img class="img-avatar img-avatar32" src="assets/media/avatars/avatar10.jpg" alt="">
+        <img class="img-avatar img-avatar32" src="{{ asset('assets/media/avatars/avatar10.jpg') }}" alt="">
       </a>
       <!-- END User Avatar -->
 

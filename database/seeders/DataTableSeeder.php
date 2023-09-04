@@ -23,28 +23,71 @@ class DataTableSeeder extends Seeder
             'region' => 'Bohicon'
         ]);
 
+        //Modules de production
         Module::create([
-            'name' => 'SEMIS DU MAÏS',
-            'status' => 1,
-            'table' => null
+            'name' => 'PRÉPARATION DU SOL',
+            'image' => 'preparation.png',
+            'svg' => 'preparation.svg',
+            'description' =>'Préparation du sol avant mise en place de la culture',
+            'status' => 0,
+            'table' => 'preparations'
         ]);
 
         Module::create([
-            'name' => 'RÉCOLTE DU MAÏS',
+            'name' => 'SEMIS',
+            'image' => 'semis.png',
+            'svg' => 'semis.svg',
+            'description' =>'Processus de semis des graines pour démarrer la croissance des plantes.',
+            'status' => 0,
+            'table' => 'semis'
+        ]);
+
+        Module::create([
+            'name' => 'ENTRETIEN',
+            'image' => 'entretien.png',
+            'svg' => 'entretien.svg',
+            'description' =>'Soins réguliers pour assurer la santé et la croissance des cultures.',
+            'status' => 0,
+            'table' => 'entretiens'
+        ]);
+
+        Module::create([
+            'name' => 'PROTECTION',
+            'image' => 'protection.png',
+            'svg' => 'protection.svg',
+            'description' =>'Mesures pour protéger les cultures contre les ravageurs, les maladies et les intempéries.',
+            'status' => 0,
+            'table' => 'prottections'
+        ]);
+
+        Module::create([
+            'name' => 'FERTISISATION',
+            'image' => 'fertilisation.png',
+            'svg' => 'fertilisation.svg',
+            'description' =>'Apport de nutriments essentiels pour favoriser la croissance des plantes.',
+            'status' => 0,
+            'table' => 'fertilisations'
+        ]);
+
+        Module::create([
+            'name' => 'RÉCOLTE',
+            'image' => 'recolte.png',
+            'svg' => 'recolte.svg',
+            'description' =>'Moment crucial où les cultures sont récoltées à maturité pour utilisation ou vente.',
             'status' => 0,
             'table' => 'recoltes'
         ]);
 
-        SubModule::create([
-            'module_id' => 1,
-            'name' => 'PLANIFICATION',
-            'table' => 'planifications'
-        ]);
+        // SubModule::create([
+        //     'module_id' => 1,
+        //     'name' => 'PLANIFICATION',
+        //     'table' => 'planifications'
+        // ]);
 
-        SubModule::create([
-            'module_id' => 1,
-            'name' => 'CONDITIONS DE SOL',
-            'table' => 'sols'
-        ]);
+        // SubModule::create([
+        //     'module_id' => 1,
+        //     'name' => 'CONDITIONS DE SOL',
+        //     'table' => 'sols'
+        // ]);
     }
 }

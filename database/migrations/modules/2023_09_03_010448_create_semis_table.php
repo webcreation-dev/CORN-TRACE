@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('modules', function (Blueprint $table) {
+        Schema::create('semis', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('image');
-            $table->string('svg');
-            $table->string('description');
-            $table->boolean("status")->default(0);
-            $table->string('table')->nullable();
+            $table->unsignedBigInteger('module_id');
+            $table->foreign('module_id')->references('id')->on('modules');
+
+            $table->enum('Choix',['Option 1','Option 2', 'Option 3']);
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modules');
+        Schema::dropIfExists('semis');
     }
 };

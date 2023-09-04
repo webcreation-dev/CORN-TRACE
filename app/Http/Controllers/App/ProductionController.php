@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\App;
 
 use App\Http\Controllers\Controller;
+use App\Models\App\Module;
 use App\Models\App\Production;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class ProductionController extends Controller
      */
     public function index()
     {
-        //
+        $productions = Production::all();
+        return view('app.productions.index', compact('productions'));
     }
 
     /**
@@ -23,9 +25,11 @@ class ProductionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $production = Production::find($request->production);
+        $modules = Module::all();
+        return view('app.modules.index', compact('modules', 'production'));
     }
 
     /**

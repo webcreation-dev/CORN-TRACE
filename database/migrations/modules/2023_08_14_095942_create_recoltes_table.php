@@ -17,14 +17,9 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('module_id');
-            $table->unsignedBigInteger('production_id');
-
             $table->foreign('module_id')->references('id')->on('modules');
-            $table->foreign('production_id')->references('id')->on('productions');
 
-            $table->date('date');
-            $table->string('quantity');
-            $table->enum('method',['moist_cereals','dry_cereals']);
+            $table->enum('Choix',['Option 1','Option 2', 'Option 3']);
             $table->timestamps();
         });
     }

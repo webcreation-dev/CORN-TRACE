@@ -4,6 +4,9 @@
   @include('components.landing.head')
 
   <body>
+    @php
+        use Carbon\Carbon;
+    @endphp
     <div id="page-container" class="page-header-fixed main-content-boxed">
 
       @include('components.landing.header')

@@ -1,6 +1,10 @@
 @extends('layouts.dashboard')
 
 @section('content')
+@php
+    use Carbon\Carbon;
+@endphp
+
 <style>
     .image {
         background-image: url("{{asset('assets/logo/banner-1.jpg')}}");
@@ -49,102 +53,113 @@
   </div> --}}
 <div class="content content-boxed">
     <div class="row items-push py-4">
-        <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
-            <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
-                <div class="block-content block-content-full text-center image">
-                    <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
-                        <svg id='qrcode_24' width='40' height='40' style="background-color: white;" viewBox='0 0 24 24'
-                            xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
-                            <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
-                            <g transform="matrix(1 0 0 1 12 12)">
-                                <g style="">
-                                    <g transform="matrix(1 0 0 1 0 0)">
-                                        <path
-                                            style="stroke: none; stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            transform=" translate(-12, -12)" d="M 0 0 L 24 0 L 24 24 L 0 24 z"
-                                            stroke-linecap="round" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 -5 -5)">
-                                        <rect
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x="-3" y="-3" rx="1" ry="1" width="6" height="6" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 -5 5.01)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="0" y1="-0.005000000000000782" x2="0" y2="0.005000000000000782" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 5 -5)">
-                                        <rect
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x="-3" y="-3" rx="1" ry="1" width="6" height="6" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 -5 -5)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="0" y1="-0.004999999999999893" x2="0" y2="0.004999999999999893" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 -5 5)">
-                                        <rect
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x="-3" y="-3" rx="1" ry="1" width="6" height="6" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 5 -5)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="0" y1="-0.004999999999999893" x2="0" y2="0.004999999999999893" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 3.5 2)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="-1.5" y1="0" x2="1.5" y2="0" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 8 2)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="0" y1="-0.004999999999999893" x2="0" y2="0.004999999999999893" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 2 3.5)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="0" y1="-1.5" x2="0" y2="1.5" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 3.5 8)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="-1.5" y1="0" x2="1.5" y2="0" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 6.5 5)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="-1.5" y1="0" x2="1.5" y2="0" />
-                                    </g>
-                                    <g transform="matrix(1 0 0 1 8 6.5)">
-                                        <line
-                                            style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
-                                            x1="0" y1="-1.5" x2="0" y2="1.5" />
+
+         <!-- Course -->
+         @foreach ($productions as $production)
+            <div class="col-md-6 col-lg-4 col-xl-3">
+                <a class="block block-rounded block-link-pop h-100 mb-0" href="{{ route('productions.create', ['production' => $production]) }}">
+                    <div class="block-content block-content-full text-center image">
+                        <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
+                            <svg id='qrcode_24' width='40' height='40' style="background-color: white;" viewBox='0 0 24 24'
+                                xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+                                <rect width='24' height='24' stroke='none' fill='#000000' opacity='0' />
+                                <g transform="matrix(1 0 0 1 12 12)">
+                                    <g style="">
+                                        <g transform="matrix(1 0 0 1 0 0)">
+                                            <path
+                                                style="stroke: none; stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                transform=" translate(-12, -12)" d="M 0 0 L 24 0 L 24 24 L 0 24 z"
+                                                stroke-linecap="round" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 -5 -5)">
+                                            <rect
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x="-3" y="-3" rx="1" ry="1" width="6" height="6" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 -5 5.01)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="0" y1="-0.005000000000000782" x2="0" y2="0.005000000000000782" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 5 -5)">
+                                            <rect
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x="-3" y="-3" rx="1" ry="1" width="6" height="6" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 -5 -5)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="0" y1="-0.004999999999999893" x2="0" y2="0.004999999999999893" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 -5 5)">
+                                            <rect
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x="-3" y="-3" rx="1" ry="1" width="6" height="6" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 5 -5)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="0" y1="-0.004999999999999893" x2="0" y2="0.004999999999999893" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 3.5 2)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="-1.5" y1="0" x2="1.5" y2="0" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 8 2)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="0" y1="-0.004999999999999893" x2="0" y2="0.004999999999999893" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 2 3.5)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="0" y1="-1.5" x2="0" y2="1.5" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 3.5 8)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="-1.5" y1="0" x2="1.5" y2="0" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 6.5 5)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="-1.5" y1="0" x2="1.5" y2="0" />
+                                        </g>
+                                        <g transform="matrix(1 0 0 1 8 6.5)">
+                                            <line
+                                                style="stroke: rgb(33,33,33); stroke-width: 2; stroke-dasharray: none; stroke-linecap: round; stroke-dashoffset: 0; stroke-linejoin: round; stroke-miterlimit: 4; fill: none; fill-rule: nonzero; opacity: 1;"
+                                                x1="0" y1="-1.5" x2="0" y2="1.5" />
+                                        </g>
                                     </g>
                                 </g>
-                            </g>
-                        </svg>
+                            </svg>
+                        </div>
+
+                        @php
+                            $created_date = Carbon::parse($production->created_at);
+                            $current_date = Carbon::now();
+                            $days_ago = $created_date->diffInDays($current_date);
+                        @endphp
+
+                        <div class="fs-sm text-white">
+                            {{$production->type}} &bull; {{$days_ago}} jours
+                        </div>
                     </div>
-                    <div class="fs-sm text-white">
-                        Maïs Blanc &bull; 3 jours
+                    <div class="block-content block-content-full">
+                        <h4 class="h5 mb-1">
+                            {{$production->type}} | {{$production->region}} | {{$production->identifiant}}
+                        </h4>
+                        <div class="fs-sm text-muted">{{$production->created_at->formatLocalized('%e %B %Y')}}</div>
                     </div>
-                </div>
-                <div class="block-content block-content-full">
-                    <h4 class="h5 mb-1">
-                        Maïs Blanc | Bohicon | #BOH-001
-                    </h4>
-                    <div class="fs-sm text-muted">November 5, 2021</div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
+        @endforeach
+
         <!-- END Course -->
 
         <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        {{-- <div class="col-md-6 col-lg-4 col-xl-3">
             <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
                 <div class="block-content block-content-full text-center image-1">
                     <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
@@ -234,11 +249,11 @@
                     <div class="fs-sm text-muted">November 1, 2021</div>
                 </div>
             </a>
-        </div>
+        </div> --}}
         <!-- END Course -->
 
         <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        {{-- <div class="col-md-6 col-lg-4 col-xl-3">
             <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
                 <div class="block-content block-content-full text-center image">
                     <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
@@ -328,11 +343,11 @@
                     <div class="fs-sm text-muted">October 27, 2021</div>
                 </div>
             </a>
-        </div>
+        </div> --}}
         <!-- END Course -->
 
         <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        {{-- <div class="col-md-6 col-lg-4 col-xl-3">
             <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
                 <div class="block-content block-content-full text-center image-1">
                     <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
@@ -422,11 +437,11 @@
                     <div class="fs-sm text-muted">October 25, 2021</div>
                 </div>
             </a>
-        </div>
+        </div> --}}
         <!-- END Course -->
 
         <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        {{-- <div class="col-md-6 col-lg-4 col-xl-3">
             <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
                 <div class="block-content block-content-full text-center image-1">
                     <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
@@ -516,11 +531,11 @@
                     <div class="fs-sm text-muted">October 10, 2021</div>
                 </div>
             </a>
-        </div>
+        </div> --}}
         <!-- END Course -->
 
         <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        {{-- <div class="col-md-6 col-lg-4 col-xl-3">
             <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
                 <div class="block-content block-content-full text-center image">
                     <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
@@ -610,11 +625,11 @@
                     <div class="fs-sm text-muted">October 1, 2021</div>
                 </div>
             </a>
-        </div>
+        </div> --}}
         <!-- END Course -->
 
         <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        {{-- <div class="col-md-6 col-lg-4 col-xl-3">
             <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
                 <div class="block-content block-content-full text-center image-1">
                     <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
@@ -704,11 +719,11 @@
                     <div class="fs-sm text-muted">September 19, 2021</div>
                 </div>
             </a>
-        </div>
+        </div> --}}
         <!-- END Course -->
 
         <!-- Course -->
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        {{-- <div class="col-md-6 col-lg-4 col-xl-3">
             <a class="block block-rounded block-link-pop h-100 mb-0" href="#">
                 <div class="block-content block-content-full text-center image">
                     <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
@@ -798,7 +813,7 @@
                     <div class="fs-sm text-muted">September 15, 2021</div>
                 </div>
             </a>
-        </div>
+        </div> --}}
         <!-- END Course -->
 
     </div>

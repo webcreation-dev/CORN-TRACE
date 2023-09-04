@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\App\ProductionController;
+use App\Http\Controllers\App\SubModuleController;
+use App\Http\Controllers\App\ModuleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +16,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resources([
+    'productions' => ProductionController::class,
+    'modules' => ModuleController::class,
+    'submodules' => SubModuleController::class,
+]);
+
 Route::get('/', function () {
     return view('landing.index');
 });
 Route::get('/dashboard', function () {
-    // return view('app.dashboard.index');
+    return view('app.dashboard.index');
 });
-Route::get('/modules', function () {
-    return view('app.modules.index');
-});
+
 Route::get('/submodules', function () {
     return view('app.sub-modules.index');
 });
