@@ -19,7 +19,12 @@ return new class extends Migration
             $table->unsignedBigInteger('module_id');
             $table->foreign('module_id')->references('id')->on('modules');
 
-            $table->enum('Choix',['Option 1','Option 2', 'Option 3']);
+            $table->string('harvesting_method'); // Mode de Récolte
+            $table->string('harvesting_period'); // Période de Récolte
+            $table->string('maturity_indicators'); // Indicateurs de Maturité
+            $table->string('loss_prevention_method'); // Méthode de prévention des Pertes
+            $table->text('other_observations')->nullable(); // Other Observations
+
             $table->timestamps();
         });
     }

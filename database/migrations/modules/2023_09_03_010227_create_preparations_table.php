@@ -19,7 +19,19 @@ return new class extends Migration
             $table->unsignedBigInteger('module_id');
             $table->foreign('module_id')->references('id')->on('modules');
 
-            $table->enum('choix',['Option 1','Option 2', 'Option 3']);
+            $table->text('description'); // Description
+            $table->string('production_modes'); // Production Modes
+            $table->string('climatic_conditions'); // Climatic Conditions
+            $table->string('maize_varieties'); // Maize Varieties
+            $table->string('soil_preparation'); // Soil Preparation
+            $table->string('irrigation_methods'); // Irrigation Methods
+            $table->string('fertilizer_type'); // Fertilizer Type
+            $table->string('pest_management_practices'); // Pest Management Practices
+            $table->string('disease_management_practices'); // Disease Management Practices
+            $table->string('soil_type'); // Soil Type
+            $table->string('plowing_method'); // Plowing Method
+            $table->text('other_observations')->nullable(); // Other Observations
+
             $table->timestamps();
         });
     }

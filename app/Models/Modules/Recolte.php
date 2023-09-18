@@ -10,10 +10,10 @@ class Recolte extends Model
     use HasFactory;
 
     protected $fillable = [
-        'module_id',
-        'production_id',
-        'date',
-        'quantity',
-        'method',
+        'harvesting_method',
+        'harvesting_period',
+        'maturity_indicators',
+        'loss_prevention_method',
+        'other_observations',
     ];
 }

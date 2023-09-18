@@ -29,6 +29,3 @@ Route::get('/dashboard', function () {
     return view('app.dashboard.index');
 });
 
-Route::get('/submodules', function () {
-    return view('app.sub-modules.index');
-});

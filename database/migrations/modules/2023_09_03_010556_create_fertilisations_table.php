@@ -18,7 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('module_id');
             $table->foreign('module_id')->references('id')->on('modules');
 
-            $table->enum('Choix',['Option 1','Option 2', 'Option 3']);
+            $table->date('date_of_fertilizer_application'); // Date d'application des engrais
+            $table->string('fertilizer_dosage'); // Dose d'engrais
+            $table->string('source_of_organic_materials'); // Source des matières organiques
+            $table->string('specific_zone'); // Zone spécifique
+            $table->text('other_observations')->nullable();
+
             $table->timestamps();
         });
     }

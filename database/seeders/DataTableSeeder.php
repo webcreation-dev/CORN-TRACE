@@ -57,7 +57,7 @@ class DataTableSeeder extends Seeder
             'svg' => 'protection.svg',
             'description' =>'Mesures pour protéger les cultures contre les ravageurs, les maladies et les intempéries.',
             'status' => 0,
-            'table' => 'prottections'
+            'table' => 'protections'
         ]);
 
         Module::create([

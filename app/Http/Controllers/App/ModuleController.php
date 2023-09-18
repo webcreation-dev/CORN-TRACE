@@ -38,6 +38,9 @@ class ModuleController extends Controller
             ->where('module_id', $module_id)
             ->get();
 
+        $step_modules = Module::hydrate($step_modules->toArray());
+
+
         return view('app.sub-modules.index', compact('modules', 'module', 'step_modules', 'module_id', 'production'));
     }
 

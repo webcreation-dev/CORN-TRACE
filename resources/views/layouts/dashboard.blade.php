@@ -98,7 +98,11 @@
       @include('components.dashboard.footer')
     </div>
 
-    <script src="{{asset('assets/js/oneui.app.min.js')}}"></script>
+
+
+
+
+    {{-- <script src="{{asset('assets/js/oneui.app.min.js')}}"></script>
     <script src="{{asset('assets/js/plugins/chart.js/chart.umd.js')}}"></script>
     <script src="{{asset('assets/js/pages/be_pages_dashboard.min.js')}}"></script>
 
@@ -111,5 +115,24 @@
 
     <script>One.helpersOnLoad(['jq-select2', 'jq-maxlength', 'js-ckeditor']);</script>
 
+    <script src="{{asset('assets/js/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/jquery-validation/additional-methods.js')}}"></script>
+
+    <script src="{{asset('assets/js/pages/be_forms_validation.min.js')}}"></script> --}}
+
+
+    <script src="{{asset('assets/js/oneui.app.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/chart.js/chart.umd.js')}}"></script>
+    <script src="{{asset('assets/js/pages/be_pages_dashboard.min.js')}}"></script>
+    <script src="{{asset('assets/js/lib/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/select2/js/select2.full.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/ckeditor/ckeditor.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/dropzone/min/dropzone.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('assets/js/plugins/jquery-validation/additional-methods.js')}}"></script>
+    <script>One.helpersOnLoad(['jq-select2']);</script>
+    <script src="{{asset('assets/js/pages/be_forms_validation.min.js')}}"></script>
+    
   </body>
 </html>

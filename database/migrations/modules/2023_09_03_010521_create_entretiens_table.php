@@ -18,7 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('module_id');
             $table->foreign('module_id')->references('id')->on('modules');
 
-            $table->enum('Choix',['Option 1','Option 2', 'Option 3']);
+            $table->string('frequency'); // Fréquence
+            $table->string('hoeing_methods'); // Méthodes de Sarclage
+            $table->string('planting_density'); // Densité de Plantation
+            $table->string('weed_control_methods'); // Méthodes de Désherbage
+            $table->string('herbicide_usage'); // Utilisation d'Herbicides
+            $table->text('other_observations')->nullable(); // Autres observations
+
             $table->timestamps();
         });
     }

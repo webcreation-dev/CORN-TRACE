@@ -23,9 +23,9 @@
         <!-- Navigation -->
         <ul class="nav-main nav-main-horizontal nav-main-hover d-none d-lg-block me-2">
           <li class="nav-main-item">
-            <a class="nav-main-link" href="#one-vue-edition">
+            <a class="nav-main-link" href="{{route('productions.index')}}">
               <i class="nav-main-link-icon fab fa-vuejs"></i>
-              <span class="nav-main-link-name">A propos</span>
+              <span class="nav-main-link-name">Productions</span>
             </a>
           </li>
           <li class="nav-main-item">

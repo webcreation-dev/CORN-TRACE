@@ -18,7 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('module_id');
             $table->foreign('module_id')->references('id')->on('modules');
 
-            $table->enum('Choix',['Option 1','Option 2', 'Option 3']);
+            $table->string('pests_and_threats'); // Ravageurs et Menaces
+            $table->string('fall_armyworm'); // Chenille légionnaire d'automne
+            $table->string('disease_sensitivity'); // Sensibilité aux Maladies
+            $table->string('viral_infection'); // Infection Virale
+            $table->string('protection_against_animals'); // Protection contre les Animaux
+            $table->text('other_observations')->nullable(); // Autres observations
+
             $table->timestamps();
         });
     }
