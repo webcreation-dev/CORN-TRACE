@@ -278,11 +278,28 @@ use Carbon\Carbon;
             <!-- Subscribe -->
             <div class="block block-rounded">
                 <div class="block-content">
-                    <a class="btn w-100 mb-4" style="background-color: #F9AC36;" href="javascript:void(0)">Voir le taux
+                    <a class="btn w-100 mb-4" style="background-color: #F9AC36;  opacity: 0.3; pointer-events: none;" href="/test">Voir le taux
                         d'aflatoxine</a>
 
                 </div>
             </div>
+
+
+            <a class="block block-rounded block-link-shadow" style="opacity: 0.3; pointer-events: none;" href="javascript:void(0)">
+                <div class="block-header block-header-default text-center">
+                    <h3 class="block-title">SCANNAGE DU QRCODE</h3>
+                </div>
+                <div class="block-content block-content-full text-center">
+                    <div class="push" style="align-items: center; justify-content: center; display:flex">
+                        <div>{!! DNS2D::getBarcodeHTML("test", 'QRCODE',5,5) !!}</div>
+                        {{-- <img src="data:image/png,{{ DNS1D::getBarcodePNG('4', 'C39+') }}" alt="barcode" /> --}}
+
+                    </div>
+                    <div class="fw-semibold mb-1">Tracabilité Unique</div>
+                    <div class="fs-sm text-muted">CORN TRACE | Bohicon</div>
+                </div>
+            </a>
+
             <!-- END Subscribe -->
 
             <!-- Course Info -->
