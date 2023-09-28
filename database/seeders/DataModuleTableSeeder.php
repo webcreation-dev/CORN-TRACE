@@ -8,6 +8,7 @@ use App\Models\Modules\Preparation;
 use App\Models\Modules\Protection;
 use App\Models\Modules\Recolte;
 use App\Models\Modules\Semis;
+use App\Models\Modules\Stockage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -88,6 +89,31 @@ class DataModuleTableSeeder extends Seeder
             'harvesting_period'  => 'harvesting_period',
             'maturity_indicators'  => 'maturity_indicators',
             'loss_prevention_method'  => 'loss_prevention_method',
+            'other_observations'  => 'other_observations',
+        ]);
+
+        Stockage::create([
+            'module_id' => 7,
+            'Maïs_mal_séché_ou_mouillé_Yes'  => 1,
+            'Mauvaise_conservation_du_maïs_Yes'  => 1,
+            'Séchage_du_maïs_sur_le_sol_Yes'  => 1,
+            'Égrenage_du_maïs_humide_Yes'  => 1,
+            'Mode_de_traitement_Maize_stovers_stacked_in_heaps'  => 1,
+            'Sacs_en_toile_Yes'  => 1,
+            'Sacs_à_photos_Yes'  => 1,
+            'Chaume_du_grenier_Yes'  => 1,
+            'Grenier_Tôle_dacier_Yes'  => 1,
+            'Bacs_étanches_Yes'  => 1,
+            'Stockage_hermétique_Yes'  => 1,
+            'Stocker_les_sacs_sur_le_sol_Yes'  => 1,
+            'Sécher_les_grains_sur_une_bâche_Yes'  => 1,
+            'Grains_sèches_sur_toit_de_terre_nue_Yes'  => 1,
+            'Grains_de_qualité_Yes'  => 1,
+            'Stocker_les_sacs_sur_des_palettes_en_bois_Yes'  => 1,
+            'Type_de_stockage'  => 1,
+            'Séchage'  => 1,
+            'Décorticage'  => 1,
+            'Mode_de_conservation'  => 1,
             'other_observations'  => 'other_observations',
         ]);
     }

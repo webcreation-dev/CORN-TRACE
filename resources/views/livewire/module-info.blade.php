@@ -105,7 +105,9 @@ use Carbon\Carbon;
                 </div>
             </div>
 
-            <form class="js-validation" action="be_forms_validation.html" method="POST">
+            <form class="js-validation" action="{{route('modules.store', ['table' => $module->table ])}}" method="POST">
+                @csrf
+                <input type="hidden" value="{{$module->id}}" name="module_id" id="">
                 <div class="block block-rounded">
                   <div class="block-header block-header-default">
                     <h3 class="block-title">FORMULAIRE DU MODULE {{ $module->name }} </h3>
@@ -121,48 +123,50 @@ use Carbon\Carbon;
                                       }, ARRAY_FILTER_USE_KEY
                                   ) as $key => $value
                               )
-
-                                  @if ((is_string($key)) && ($key != 'other_observations'))
-                                      <div class="mb-4">
-                                          <label class="form-label" for="val-username">
-                                              {{App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$key] }}
-                                              <span class="text-danger">*</span>
-                                          </label>
-                                          <input type="text" class="form-control" id="val-username" value="{{$value}}" name="{{ $key }}" placeholder="Entrez {{ $value }}..">
-                                      </div>
-                                  @elseif((is_numeric($key)) && ($key != 'other_observations'))
-                                      <div class="mb-4">
-                                          <label class="form-label" for="val-number"> {{App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$key] }}
-                                               <span class="text-danger">*</span></label>
-                                          <input type="text" class="form-control" id="val-number" value="{{$value}}" name="{{ $key }}" placeholder="5.0">
-                                      </div>
-                                  @else
-                                      <div class="mb-4">
-                                          <label class="form-label" for="val-suggestions">Autres Observations <span class="text-danger">*</span></label>
-                                          <textarea class="form-control" id="val-suggestions" value="{{$value}}" name="other_observations" rows="5" placeholder="What would you like to see?"></textarea>
-                                      </div>
-                                  @endif
+                                @if($module->table != 'stockages')
+                                    @if ((is_string($key)) && ($key != 'other_observations'))
+                                        <div class="mb-4">
+                                            <label class="form-label" for="val-username">
+                                                {{App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$key] }}
+                                                <span class="text-danger">*</span>
+                                            </label>
+                                            <input type="text" class="form-control" id="val-username" value="{{$value}}" name="{{ $key }}" placeholder="Entrez {{ $value }}..">
+                                        </div>
+                                    @elseif((is_numeric($key)) && ($key != 'other_observations'))
+                                        <div class="mb-4">
+                                            <label class="form-label" for="val-number"> {{App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$key] }}
+                                                <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="val-number" value="{{$value}}" name="{{ $key }}" placeholder="5.0">
+                                        </div>
+                                    @else
+                                        <div class="mb-4">
+                                            <label class="form-label" for="val-suggestions">Autres Observations <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="val-suggestions" value="{{$value}}" name="other_observations" rows="5" placeholder="What would you like to see?"></textarea>
+                                        </div>
+                                    @endif
+                                @else
+                                    @if($key != 'other_observations')
+                                        <div class="mb-4">
+                                            <label class="form-label" for="val-select2">{{App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$key] }} <span class="text-danger">*</span></label>
+                                            <select class="js-select2 form-select" id="val-select2" name="{{ $key }}" style="width: 100%;" data-placeholder="Choisir un..">
+                                                <option></option>
+                                                @foreach(App\Models\Modules\TranslateModuleName::MODULE_STOCKAGE_OPTIONS [$key] as $optionValue => $optionLabel)
+                                                    <option {{ $optionValue == $value ? 'selected' : '' }} value="{{ $optionValue }}">{{ $optionLabel }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    @else
+                                        <div class="mb-4">
+                                            <label class="form-label" for="val-suggestions">Autres Observations <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="val-suggestions" value="{{$value}}" name="other_observations" rows="5" placeholder="What would you like to see?"></textarea>
+                                        </div>
+                                    @endif
+                                @endif
                               @endforeach
                           @endforeach
 
                           {{-- SELECT 2 FORM --}}
-                          {{-- <div class="mb-4">
-                              <label class="form-label" for="val-select2">Select2 <span class="text-danger">*</span></label>
-                              <select class="js-select2 form-select" id="val-select2" name="val-select2" style="width: 100%;" data-placeholder="Choose one..">
-                                <option></option><!-- Required for data-placeholder attribute to work with Select2 plugin -->
-                                <option value="html">HTML</option>
-                                <option value="css">CSS</option>
-                                <option value="javascript">JavaScript</option>
-                                <option value="angular">Angular</option>
-                                <option value="react">React</option>
-                                <option value="vuejs">Vue.js</option>
-                                <option value="ruby">Ruby</option>
-                                <option value="php">PHP</option>
-                                <option value="asp">ASP.NET</option>
-                                <option value="python">Python</option>
-                                <option value="mysql">MySQL</option>
-                              </select>
-                          </div> --}}
+
                       </div>
                     </div>
                     <!-- END Regular -->

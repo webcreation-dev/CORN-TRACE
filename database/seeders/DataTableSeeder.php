@@ -78,6 +78,15 @@ class DataTableSeeder extends Seeder
             'table' => 'recoltes'
         ]);
 
+        Module::create([
+            'name' => 'STOCKAGE',
+            'image' => 'stockage.png',
+            'svg' => 'stockage.svg',
+            'description' =>'Moment crucial où les cultures sont récoltées et stockés pour etre vendus.',
+            'status' => 0,
+            'table' => 'stockages'
+        ]);
+
         // SubModule::create([
         //     'module_id' => 1,
         //     'name' => 'PLANIFICATION',

@@ -58,7 +58,7 @@
             <div class="col-md-6 col-xl-4">
                 <div class="block block-rounded h-100 mb-0">
                 <div class="block-content p-1">
-                    <div class="options-container @if (!$module->status) options-disable @endif ">
+                    <div class="options-container @if (App\Models\App\Module::getTableName($module->id, $production->id)) options-disable @endif ">
                     <img class="img-fluid options-item colored-image" src="{{ asset("assets/media/modules/$module->image") }}" alt="">
                     <div class="options-overlay bg-black-75">
                         <div class="options-overlay-content">
