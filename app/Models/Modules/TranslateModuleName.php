@@ -80,92 +80,126 @@ class TranslateModuleName extends Model
         'Séchage' => "Séchage",
         'Décorticage' => "Décorticage",
         'Mode_de_conservation' => "Mode de conservation",
-        'other_observations' => "Autres observations",
-
+        'Jours' => 'Jours',
         // AUTRES
         'other_observations' => "Other Observations",
+
+        // STOCKAGE
+
+        '1' => 'OUI',
+        '0' => 'NON',
+
+        // Tyoe de stockage
+        '0.114049128522' => 'Open Storage',
+        '0.12239394257' => 'Pics bags',
+        '0.275264168233' => 'Gunny bags',
+        '0.162974976393' => 'Metallic bins',
+
+        //Séchage
+        '0.199195971398' => 'On ground without canvas',
+        '0.185951768472' => 'On ground with canvas',
+        '0.167857749948' => 'Left to dry in the field',
+        '0.167052416427' => 'Open Store',
+
+        //Décorticage
+        '0.253038663328' => 'By hand',
+        '0.15003401412' => 'Use of machine',
+        '0.174925816116' => 'By hand and Use of machine',
+        '0.181793833465' => 'Aucun',
+
+        //Mode de conservation
+        '0.190645642701' => 'Insecticides',
+        '0.193145091219' => 'Aucun',
+        '0.167537615799' => 'Both ash & Insecticides',
     ];
 
     const MODULE_STOCKAGE_OPTIONS = [
         'Maïs_mal_séché_ou_mouillé_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Mauvaise_conservation_du_maïs_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Séchage_du_maïs_sur_le_sol_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Égrenage_du_maïs_humide_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Mode_de_traitement_Maize_stovers_stacked_in_heaps' => [
-            0 => 'Maize stovers stacked in heaps',
-            1 => 'Maize stovers stacked in heaps',
+            '0' => 'Maize cob removed',
+            '1' => 'Maize stovers stacked in heaps',
         ],
         'Sacs_en_toile_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Sacs_à_photos_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Chaume_du_grenier_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Grenier_Tôle_dacier_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Bacs_étanches_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Stockage_hermétique_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Stocker_les_sacs_sur_le_sol_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Sécher_les_grains_sur_une_bâche_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Grains_sèches_sur_toit_de_terre_nue_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Grains_de_qualité_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Stocker_les_sacs_sur_des_palettes_en_bois_Yes' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '1' => 'OUI',
+            '0' => 'NON',
         ],
         'Type_de_stockage' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '0.114049128522' => 'Open Storage',
+            '0.12239394257' => 'Pics bags',
+            '0.275264168233' => 'Gunny bags',
+            '0.162974976393' => 'Metallic bins'
         ],
         'Séchage' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '0.199195971398' => 'On ground without canvas',
+            '0.185951768472' => 'On ground with canvas',
+            '0.167857749948' => 'Left to dry in the field',
+            '0.167052416427' => 'Open Store'
         ],
         'Décorticage' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '0.253038663328' => 'By hand',
+            '0.15003401412' => 'Use of machine',
+            '0.174925816116' => 'By hand and Use of machine',
+            '0.181793833465' => 'Aucun',
         ],
         'Mode_de_conservation' => [
-            0 => 'OUI',
-            1 => 'NON',
+            '0.190645642701' => 'Insecticides',
+            '0.193145091219' => 'Aucun',
+            '0.167537615799' => 'Both ash & Insecticides'
         ],
     ];
 

@@ -29,6 +29,7 @@ class Stockage extends Model
         'Type_de_stockage',
         'Séchage',
         'Décorticage',
+        'Jours',
         'Mode_de_conservation',
         'other_observations'
     ];

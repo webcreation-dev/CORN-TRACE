@@ -54,13 +54,10 @@ class ModuleController extends Controller
     {
         $table = $request->table;
         $data = $request->except('_token', 'table');
-        // DB::table($table)->updateOrInsert($data);
         DB::table($table)->updateOrInsert(
-            ['module_id' => $request->module_id], // Condition pour déterminer la mise à jour ou l'insertion
-            $data // Données à insérer ou à mettre à jour
+            ['module_id' => $request->module_id],
+            $data
         );
-
-
         return back();
     }
 

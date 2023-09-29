@@ -91,7 +91,19 @@ use Carbon\Carbon;
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <span class=" badge bg-primary ">{{ $value }}</span>
+                                                    <span class=" badge bg-primary ">
+
+                                                        @if($module->table != 'stockages')
+                                                            {{ $value }}
+                                                        @else
+                                                            @if(($key != 'other_observations') && ($key != 'Jours'))
+                                                                {{ App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$value] }}
+                                                            @else
+                                                                {{ $value }}
+                                                            @endif
+                                                        @endif
+                                                    </span>
+
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -145,15 +157,21 @@ use Carbon\Carbon;
                                         </div>
                                     @endif
                                 @else
-                                    @if($key != 'other_observations')
+                                    @if(($key != 'other_observations') && ($key != 'Jours'))
                                         <div class="mb-4">
                                             <label class="form-label" for="val-select2">{{App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$key] }} <span class="text-danger">*</span></label>
-                                            <select class="js-select2 form-select" id="val-select2" name="{{ $key }}" style="width: 100%;" data-placeholder="Choisir un..">
+                                            <select class="js-select2 form-select" id="val-selECT-{{$key}}" name="{{ $key }}" style="width: 100%;" data-placeholder="Choisir un..">
                                                 <option></option>
                                                 @foreach(App\Models\Modules\TranslateModuleName::MODULE_STOCKAGE_OPTIONS [$key] as $optionValue => $optionLabel)
                                                     <option {{ $optionValue == $value ? 'selected' : '' }} value="{{ $optionValue }}">{{ $optionLabel }}</option>
                                                 @endforeach
                                             </select>
+                                        </div>
+                                    @elseif($key == 'Jours')
+                                        <div class="mb-4">
+                                            <label class="form-label" for="val-number"> {{App\Models\Modules\TranslateModuleName::MODULE_NAME_TRANSLATE[$key] }}
+                                                <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="val-number" value="{{$value}}" name="{{ $key }}" placeholder="5.0">
                                         </div>
                                     @else
                                         <div class="mb-4">
